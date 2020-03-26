@@ -1,18 +1,35 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="routes">
+      <router-link
+        v-for="route in routes"
+        :key="route.path"
+        :to="route.path"
+        :exact="route.exact"
+        class="route"
+      >
+        {{ route.path }}
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
-
 export default {
   name: 'Home',
-  components: {
-    HelloWorld,
+  computed: {
+    routes() {
+      return this.$router.options.routes.filter(
+        (route) => route.component && route.path != '/'
+      );
+    },
   },
 };
 </script>
+
+<style scoped>
+.routes {
+  display: flex;
+  flex-direction: column;
+}
+</style>
