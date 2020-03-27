@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <AssistiveTouch />
     <router-view class="router-view" />
+    <AssistiveTouch />
   </div>
 </template>
 

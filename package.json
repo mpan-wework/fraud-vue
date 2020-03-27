@@ -18,7 +18,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "eslint": "eslint src --ext .ts,.vue"
+    "eslint": "eslint src --ext .js,.ts,.vue"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
